@@ -1,0 +1,13 @@
+query CartTransformRunInput {
+  cart {
+    lines {
+      id
+      freebieGwp: attribute(key: "_freebiegwp") {
+        value
+      }
+      freebieGwpRole: attribute(key: "_freebiegwp_role") {
+        value
+      }
+    }
+  }
+}

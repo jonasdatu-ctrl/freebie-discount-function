@@ -1,0 +1,24 @@
+{
+  "payload": {
+    "export": "cart-transform-run",
+    "target": "cart.transform.run",
+    "input": {
+      "cart": {
+        "lines": [
+          {
+            "id": "gid://shopify/CartLine/2",
+            "freebieGwp": {
+              "value": "T1"
+            },
+            "freebieGwpRole": {
+              "value": "freebie"
+            }
+          }
+        ]
+      }
+    },
+    "output": {
+      "operations": []
+    }
+  }
+}

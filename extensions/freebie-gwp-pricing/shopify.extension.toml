@@ -1,0 +1,21 @@
+api_version = "2026-04"
+
+[[extensions]]
+name = "t:name"
+handle = "freebie-gwp-pricing"
+type = "function"
+uid = "cdfce7a5-a379-c8f1-453a-071d6b32687672c27f33"
+description = "t:description"
+
+  [[extensions.targeting]]
+  target = "cart.transform.run"
+  input_query = "src/cart_transform_run.graphql"
+  export = "cart-transform-run"
+
+  [extensions.build]
+  command = ""
+  path = "dist/function.wasm"
+
+  [extensions.ui.paths]
+  create = "/"
+  details = "/"

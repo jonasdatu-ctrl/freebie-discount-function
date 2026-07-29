@@ -1,0 +1,55 @@
+{
+  "payload": {
+    "export": "cart-transform-run",
+    "target": "cart.transform.run",
+    "input": {
+      "cart": {
+        "lines": [
+          {
+            "id": "gid://shopify/CartLine/1",
+            "freebieGwp": {
+              "value": "T1"
+            },
+            "freebieGwpRole": {
+              "value": "main"
+            }
+          },
+          {
+            "id": "gid://shopify/CartLine/2",
+            "freebieGwp": {
+              "value": "T1"
+            },
+            "freebieGwpRole": {
+              "value": "main"
+            }
+          },
+          {
+            "id": "gid://shopify/CartLine/3",
+            "freebieGwp": {
+              "value": "T1"
+            },
+            "freebieGwpRole": {
+              "value": "freebie"
+            }
+          }
+        ]
+      }
+    },
+    "output": {
+      "operations": [
+        {
+          "lineUpdate": {
+            "cartLineId": "gid://shopify/CartLine/3",
+            "price": {
+              "adjustment": {
+                "fixedPricePerUnit": {
+                  "amount": "0"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
