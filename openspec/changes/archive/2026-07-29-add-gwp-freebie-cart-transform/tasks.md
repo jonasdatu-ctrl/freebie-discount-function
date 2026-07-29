@@ -19,6 +19,8 @@
 
 ## 4. Manual verification in a dev store
 
+**Deferred at archive time (explicit user decision, not completed).** During live testing, registration initially failed with `GraphqlQueryError: Type mismatch on variable $functionId and argument functionId (ID! / String)` — the `cartTransformCreate` mutation's `functionId` argument is `String`, not `ID`, in the real Admin API. This was found and fixed in `app/cart-transform.server.js` (changed `$functionId: ID!` to `$functionId: String!`), and the stale local session that was masking retries was cleared. However, the fix was never re-verified live after clearing the session — it's unconfirmed whether `cartTransformCreate` now succeeds, and none of the checkout-level scenarios below were observed. Whoever picks this up next should start by re-running the flow described in this change's discussion before assuming any of the below works.
+
 - [ ] 4.1 Add a main product and a freebie product to cart with matching `_freebiegwp` / `_freebiegwp_role` attributes (via GraphiQL cart mutation or equivalent), confirm the freebie's price is zeroed at checkout.
 - [ ] 4.2 Add only a freebie-tagged line with no paired main line, confirm it stays at full price.
 - [ ] 4.3 Confirm the store's existing automatic discount on the main product still applies normally and is unaffected by the freebie's price change.
